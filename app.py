@@ -18,7 +18,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # 🧠 Download tokenizer only once
-nltk.download('punkt')
+
 
 # 📄 Function to extract text from PDF
 def extract_text_from_pdf(pdf_path):
