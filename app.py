@@ -18,7 +18,7 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 # 📖 Load and process the handbook
-handbook_text = extract_text_from_pdf(r"C:\Users\LENOVO\Documents\Year2\Term1\Kepler_Chat_bot\Kepler College_Student Handbook.pdf")
+handbook_text = extract_text_from_pdf(r"C:\Users\LENOVO\Documents\Year2\Term1\Kepler_Chat_bot\Kepler_college_Student_Handbook.pdf")
 sentences = sent_tokenize(handbook_text)
 
 # 🔍 Convert sentences to TF-IDF vectors
