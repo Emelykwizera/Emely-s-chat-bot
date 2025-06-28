@@ -3,15 +3,16 @@ import PyPDF2
 import nltk
 import os
 
-# Create a folder 'nltk_data' in your app directory
+# 1. Setup nltk data directory inside your app folder
 nltk_data_dir = os.path.join(os.getcwd(), "nltk_data")
 os.makedirs(nltk_data_dir, exist_ok=True)
 
-# Tell nltk to look in that folder
+# 2. Tell nltk to look inside this folder
 nltk.data.path.append(nltk_data_dir)
 
-# Download punkt tokenizer data into that folder if missing
+# 3. Download required tokenizer data (only if missing)
 nltk.download("punkt", download_dir=nltk_data_dir)
+nltk.download("punkt_tab", download_dir=nltk_data_dir)  # download punkt_tab too for safety
  
 from nltk.tokenize import sent_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
