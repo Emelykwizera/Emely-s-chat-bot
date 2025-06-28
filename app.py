@@ -1,17 +1,16 @@
 import streamlit as st
 import PyPDF2
 import nltk
-
 import os
 
-# Setup a local nltk_data folder inside your project folder
+# Create a folder 'nltk_data' in your app directory
 nltk_data_dir = os.path.join(os.getcwd(), "nltk_data")
 os.makedirs(nltk_data_dir, exist_ok=True)
 
-# Tell nltk to look for data here
+# Tell nltk to look in that folder
 nltk.data.path.append(nltk_data_dir)
 
-# Download punkt tokenizer here if not already downloaded
+# Download punkt tokenizer data into that folder if missing
 nltk.download("punkt", download_dir=nltk_data_dir)
  
 from nltk.tokenize import sent_tokenize
