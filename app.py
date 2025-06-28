@@ -1,6 +1,7 @@
 import streamlit as st
 import PyPDF2
 import nltk
+nltk.download("punkt")  # ✅ make sure this is here!
 from nltk.tokenize import sent_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
