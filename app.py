@@ -1,7 +1,19 @@
 import streamlit as st
 import PyPDF2
 import nltk
-nltk.download("punkt")  # ✅ make sure this is here!
+
+import os
+
+# Setup a local nltk_data folder inside your project folder
+nltk_data_dir = os.path.join(os.getcwd(), "nltk_data")
+os.makedirs(nltk_data_dir, exist_ok=True)
+
+# Tell nltk to look for data here
+nltk.data.path.append(nltk_data_dir)
+
+# Download punkt tokenizer here if not already downloaded
+nltk.download("punkt", download_dir=nltk_data_dir)
+ 
 from nltk.tokenize import sent_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
